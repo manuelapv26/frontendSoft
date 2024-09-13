@@ -1,0 +1,35 @@
+button {
+    width: 90px;
+    height: 47px;
+    background-color: #6A0DAD; /* Color morado */
+    cursor: pointer;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #5A0C91; 
+}
+
+button:disabled {
+    background-color: #BDA0D9;
+    color: rgba(0, 0, 0, 0.12);
+    cursor: not-allowed;
+}
+
+button:disabled:active {
+    background-color: #BDA0D9;
+    box-shadow: none;
+}
+
+button:active {
+    background-color: #4B0A72;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+button:focus-visible {
+    outline: 2px solid #500B80; 
+}

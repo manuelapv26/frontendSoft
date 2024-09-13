@@ -1,0 +1,16 @@
+<div class="All">
+    <div class="container">
+      <div class="search">
+        <app-search></app-search>
+      </div>
+      <div class="button">
+        <app-button (click)="openModal()" label="Agregar Producto"></app-button>
+      </div>
+      <div class="containerCards" >
+        <app-card-product class="cards"></app-card-product>
+      </div>
+    </div>
+  </div>
+  
+  <app-modal-add-product *ngIf="isModalOpen" (close)="closeModal()"></app-modal-add-product>
+  

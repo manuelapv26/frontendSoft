@@ -1,0 +1,90 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+    justify-content: space-between; /* Espacio entre los elementos */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin: 0 30px;
+}
+
+.clientCard {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease;
+    width: calc(33.333% - 20px); /* 3 tarjetas por fila con espacio entre ellas */
+    margin-bottom: 20px; /* Asegura espacio entre las filas */
+}
+
+.clientCard:hover {
+    transform: translateY(-5px);
+}
+
+.clientCard .containerBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: auto;
+}
+
+.clientCard .containerBtn img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.clientCard .containerName,
+.clientCard .containerPrecio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.clientCard .containerName strong,
+.clientCard .containerDescripcion strong,
+.clientCard .containerPrecio strong {
+    margin-right: 5px;
+}
+
+.clientCard .containerName p,
+.clientCard .containerDescripcion p,
+.clientCard .containerPrecio p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.containerDescripcion {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.optionsMenu {
+    position: absolute;
+    top: 24px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 5px 0;
+    width: 100px;
+    z-index: 100;
+}
+
+.optionsMenu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.optionsMenu li:hover {
+    background-color: #f5f5f5;
+    color: red;
+}

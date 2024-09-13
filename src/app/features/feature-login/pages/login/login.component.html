@@ -1,0 +1,28 @@
+<div class="outer-container">
+    <div class="login-container">
+        <div class="form-container">
+            <h2>Inicia sesión</h2>
+            <form (ngSubmit)="onLogin()">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="E-mail" [(ngModel)]="email" name="email" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required />
+                </div>
+                <div class="extra-options">
+                    <label class="rememberMe"><input type="checkbox"><p>Recuerdame</p></label>
+                </div>
+                <div class="button">
+                    <app-button type="submit" label="Ingresar"></app-button>
+                </div>
+                <div class="create-account">
+                    <span>¿Aún no tienes cuenta?</span> <a routerLink="/register">Crear</a>
+                </div>
+            </form>
+        </div>
+        <div class="welcome-container">
+            <h2>¡Bienvenido de nuevo!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra magna nisl, at posuere sem dapibus sed.</p>
+        </div>
+    </div>
+</div>

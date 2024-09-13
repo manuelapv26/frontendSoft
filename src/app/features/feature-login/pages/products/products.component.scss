@@ -1,0 +1,20 @@
+.All{
+    height: auto;
+    background-color: #f0f0f0;
+}
+.search{
+    padding-top:  20px;
+}
+.button{
+    margin-left: 30px;
+}
+.containerCards{
+    margin-top: 30px;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+    justify-content: space-between; /* Espacio entre los elementos */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin: 0 30px;
+}

@@ -1,0 +1,25 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <div class="title">
+      <h1>Agregar Producto</h1>
+    </div>
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+      <div>
+        <label for="nameP">Nombre del Producto:</label>
+        <input id="nameP" formControlName="nameP" required>
+      </div>
+      <div>
+        <label for="descriptionP">Descripcion</label>
+        <input id="descriptionP" formControlName="descriptionP" required>
+      </div>
+      <div>
+        <label for="price">Precio:</label>
+        <input id="price" formControlName="price" required>
+      </div>
+      <div class="buttons">
+        <button type="submit">Agregar</button>
+        <button type="button" (click)="close.emit()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

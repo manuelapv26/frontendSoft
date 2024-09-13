@@ -1,0 +1,18 @@
+<div class="clientCard" *ngFor="let product of products">
+    <div class="containerBtn">
+      <img src="../../../../../assets/images/mas-opciones.png" (click)="product.showOptions = !product.showOptions">
+      <ul class="optionsMenu" *ngIf="product.showOptions">
+        <li (click)="deleteProduct(product)">Eliminar</li>
+      </ul>
+    </div>
+    <div class="containerName">
+      <strong>Nombre:</strong><p>{{ product.nameP }}</p>
+    </div>
+    <div class="containerDescripcion">
+      <strong>Descripción:</strong><p>{{ product.descriptionP }}</p>
+    </div>
+    <div class="containerPrecio">
+      <strong>Precio:</strong><p>{{ product.price }}</p>
+    </div>
+  </div>
+  
