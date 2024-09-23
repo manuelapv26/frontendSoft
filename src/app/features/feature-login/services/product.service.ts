@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ProductsDetails } from '../models/products.models';
 import axios from 'axios';
 import { catchError, Observable, throwError } from 'rxjs';
@@ -10,7 +10,8 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class ProductService {
   private apiUrl = 'http://localhost:10101/api/products';
   private apiUrl2 = 'http://localhost:10101/api/productsCreate';
-  private apiUrl3=  'http://localhost:10101/api/products'
+  private apiUrl3=  'http://localhost:10101/api/products';
+  private apiUrl4= 'http://localhost:10101/api/products';
 
   constructor(private http: HttpClient) { }
 
@@ -83,6 +84,26 @@ export class ProductService {
         return throwError(error);
       })
     );
+  }
+
+  
+  searchProduct(nameP: string): Observable<any[]> {
+    const token = localStorage.getItem('token'); // Obtener token desde localStorage
+    if (!token) {
+      throw new Error('No se ha encontrado el token de autenticación');
+    }
+
+    // Encabezados de la petición, incluyendo el token
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+
+    // Parámetros para la query string
+    const params = new HttpParams().set('name', nameP);
+
+    // Realizar la petición GET al backend
+    const url = `${this.apiUrl4}/search`; // Ajusta esta URL según tu backend
+    return this.http.get<any[]>(url, { headers, params });
   }
 }
 

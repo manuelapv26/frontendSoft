@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductService } from '../../../../features/feature-login/services/product.service';
 import { ProductsDetails } from '../../../../features/feature-login/models/products.models';
 
@@ -8,6 +8,7 @@ import { ProductsDetails } from '../../../../features/feature-login/models/produ
   styleUrls: ['./card-product.component.scss']
 })
 export class CardProductComponent {
+  @Input() product!: ProductsDetails;
   products: ProductsDetails[] = [];
 
   constructor(private productService: ProductService) {}
@@ -38,6 +39,15 @@ export class CardProductComponent {
     } else {
       console.error('El producto no tiene un ID definido:', product);
     }
+  }
+  onProductsFiltered(filteredProducts: ProductsDetails[]) {
+    console.log('Productos filtrados recibidos:', filteredProducts); // Aquí debes ver los productos correctos
+    this.products = filteredProducts; // Actualizar el array de productos
+  }
+  
+  // En el componente `app-card-product`
+  ngOnChanges() {
+    console.log('Producto recibido en app-card-product:', this.product); // Verifica si el producto llega bien
   }
   
 }

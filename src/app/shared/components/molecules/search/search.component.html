@@ -1,5 +1,4 @@
 <div class="search-container">
-    <input type="text" placeholder="Buscar..."  />
-    <app-search-button></app-search-button>
-  </div>
-  
+  <input #searchInput type="text" placeholder="Buscar..." />
+  <app-search-button (searchClicked)="searchProduct()"></app-search-button>
+</div>

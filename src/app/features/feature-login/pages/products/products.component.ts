@@ -35,4 +35,7 @@ export class ProductsComponent {
     this.isModalOpen = false;
     this.loadProducts(); // Actualiza la lista de productos después de cerrar el modal
   }
+  onProductsFiltered(filteredProducts: ProductsDetails[]) {
+    this.products = filteredProducts; // Asegúrate de que 'products' siempre contenga los resultados filtrados
+  }
 }

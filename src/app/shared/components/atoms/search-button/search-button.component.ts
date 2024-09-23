@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-button',
@@ -10,8 +10,10 @@ export class SearchButtonComponent {
   habilitarDesabilitarBoton() {
     this.estaDeshabilidato = !this.estaDeshabilidato;
   }
+  // Evento que emitirá la acción del clic
+  @Output() searchClicked = new EventEmitter<void>(); 
 
   onClick() {
-    
+    this.searchClicked.emit(); // Emite el evento cuando se hace clic
   }
 }
